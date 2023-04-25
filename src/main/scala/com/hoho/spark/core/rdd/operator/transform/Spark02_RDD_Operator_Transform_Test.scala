@@ -17,6 +17,7 @@ object Spark02_RDD_Operator_Transform_Test {
         // 【2】，【4】
         val mpRDD = rdd.mapPartitions(
             iter => {
+                // *** 包一层List再转成iterator用于返回
                 List(iter.max).iterator
             }
         )

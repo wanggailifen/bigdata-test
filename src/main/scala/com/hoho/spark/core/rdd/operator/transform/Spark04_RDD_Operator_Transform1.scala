@@ -7,7 +7,7 @@ object Spark04_RDD_Operator_Transform1 {
 
     def main(args: Array[String]): Unit = {
 
-        val sparkConf = new SparkConf().setMaster("local[*]").setAppName("Operator")
+        val sparkConf = new SparkConf().setMaster("local[*]").setAppName("Operator").set("spark.driver.bindAddress", "127.0.0.1")
         val sc = new SparkContext(sparkConf)
 
         // TODO 算子 - flatMap
