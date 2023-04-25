@@ -8,11 +8,12 @@ object WordCountScala {
     // 1.创建上下文
     var conf = new SparkConf()
     conf.setAppName("WordCountScala")
-    //    conf.setMaster("local")
+    conf.setMaster("local")
+    conf.set("spark.driver.bindAddress", "127.0.0.1")
     val sc = new SparkContext(conf)
 
     // 2.加载数据
-    var path = "/Users/tlc/IdeaProjects/bigdata-test/src/main/resources/hello.txt";
+    var path = "datas";
     if (args.length == 1) {
       path = args(0)
     }
