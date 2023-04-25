@@ -1,2 +1,9 @@
 # 项目排除路径
 /target/
+
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
