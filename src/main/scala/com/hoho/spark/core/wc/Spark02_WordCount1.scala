@@ -11,8 +11,7 @@ object Spark02_WordCount1 {
     // Spark框架
     // TODO 建立和Spark框架的连接
     // JDBC : Connection
-    val sparConf = new SparkConf().setMaster("local").setAppName("WordCount")
-    sparConf.set("spark.driver.bindAddress", "127.0.0.1")
+    val sparConf = new SparkConf().setMaster("local[*]").setAppName("WordCount").set("spark.driver.host", "localhost")
 
     val sc = new SparkContext(sparConf)
 
@@ -32,7 +31,8 @@ object Spark02_WordCount1 {
     val wordToOne = words.map(word => (word, 1))
 
     // 4. 将转换后的数据进行分组聚合
-    // 相同key的value进行聚合操作
+    // Spark框架提供了更多的功能，可以将分组和聚合使用一个方法实现
+    // reduceByKey 相同key的value进行聚合操作
     // (word, 1) => (word, sum)
     val wordToSum: RDD[(String, Int)] = wordToOne.reduceByKey(_ + _)
 
