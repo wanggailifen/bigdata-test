@@ -3,7 +3,7 @@ package com.hoho.spark.core.rdd.operator.transform
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{HashPartitioner, SparkConf, SparkContext}
 
-object Spark14_RDD_Operator_Transform {
+object Spark14_RDD_Operator_Transform_partitionBy {
 
     def main(args: Array[String]): Unit = {
 

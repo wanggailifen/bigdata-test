@@ -1,23 +1,24 @@
 package com.hoho.spark.core.rdd.operator.transform
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark12_RDD_Operator_Transform {
+object Spark07_RDD_Operator_Transform_filter {
 
     def main(args: Array[String]): Unit = {
 
         val sparkConf = new SparkConf().setMaster("local[*]").setAppName("Operator")
         val sc = new SparkContext(sparkConf)
 
-        // TODO 算子 - sortBy
-        val rdd = sc.makeRDD(List(6,2,4,5,3,1), 2)
+        // TODO 算子 - filter
+        val rdd = sc.makeRDD(List(1,2,3,4))
 
-        val newRDD: RDD[Int] = rdd.sortBy(num=>num)
+        val filterRDD: RDD[Int] = rdd.filter(num=>num%2!=0)
 
-        newRDD.saveAsTextFile("output")
-
-
+        filterRDD.collect().foreach(println)
 
 
         sc.stop()

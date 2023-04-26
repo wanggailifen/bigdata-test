@@ -3,7 +3,12 @@ package com.hoho.spark.core.rdd.operator.transform
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark10_RDD_Operator_Transform {
+/**
+ * 根据数据量缩减分区，用于大数据集过滤后，提高小数据集的执行效率
+    当 spark 程序中，存在过多的小任务的时候，可以通过 coalesce 方法，收缩合并分区，减少
+    分区的个数，减小任务调度成本
+ */
+object Spark10_RDD_Operator_Transform_coalesce {
 
     def main(args: Array[String]): Unit = {
 
