@@ -17,7 +17,7 @@ object Spark02_RDD_Operator_Action {
         //val i: Int = rdd.reduce(_+_)
         //println(i)
 
-        // collect : 方法会将不同分区的数据按照分区顺序采集到Driver端内存中，形成数组
+        // collect : 方法会将不同分区的数据按照 顺序采集到Driver端内存中，形成数组
         //val ints: Array[Int] = rdd.collect()
         //println(ints.mkString(","))
 

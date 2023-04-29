@@ -32,7 +32,7 @@ object Spark13_RDD_Operator_Transform_intersection {
         val rdd5: RDD[Int] = rdd1.subtract(rdd2)
         println(rdd5.collect().mkString(","))
 
-        // 拉链 : 【1-3，2-4，3-5，4-6】
+        // TODO 拉链 : 【1-3，2-4，3-5，4-6】 要求两个数据源分区数量保持一致，分区中的数据也保持一致
         val rdd6: RDD[(Int, Int)] = rdd1.zip(rdd2)
         val rdd8 = rdd1.zip(rdd7)
         println(rdd6.collect().mkString(","))

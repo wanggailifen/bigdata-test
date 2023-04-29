@@ -2,7 +2,7 @@ package com.hoho.spark.core.rdd.operator.action
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark06_RDD_Operator_Action {
+object Spark06_RDD_Operator_Action_foreach {
 
     def main(args: Array[String]): Unit = {
 

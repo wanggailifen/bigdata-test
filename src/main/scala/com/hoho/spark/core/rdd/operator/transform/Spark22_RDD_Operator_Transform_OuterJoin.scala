@@ -3,7 +3,7 @@ package com.hoho.spark.core.rdd.operator.transform
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark22_RDD_Operator_Transform {
+object Spark22_RDD_Operator_Transform_OuterJoin {
 
     def main(args: Array[String]): Unit = {
 

@@ -22,8 +22,12 @@ object Spark18_RDD_Operator_Transform3 {
         //aggRDD.collect.foreach(println)
 
         // 获取相同key的数据的平均值 => (a, 3),(b, 4)
+
+        // (0,0) 表示 (初始值，次数)
         val newRDD : RDD[(String, (Int, Int))] = rdd.aggregateByKey( (0,0) )(
+            // ((初始值，次数),v)
             ( t, v ) => {
+                // (初始值+v，次数+1)
                 (t._1 + v, t._2 + 1)
             },
             (t1, t2) => {

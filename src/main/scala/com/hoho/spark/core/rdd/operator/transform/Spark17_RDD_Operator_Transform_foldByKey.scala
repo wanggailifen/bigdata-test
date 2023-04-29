@@ -2,7 +2,7 @@ package com.hoho.spark.core.rdd.operator.transform
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark17_RDD_Operator_Transform2 {
+object Spark17_RDD_Operator_Transform_foldByKey {
 
     def main(args: Array[String]): Unit = {
 

@@ -25,7 +25,6 @@ object Spark14_RDD_Operator_Transform_partitionBy {
 
 
 
-
         sc.stop()
 
     }

@@ -3,7 +3,7 @@ package com.hoho.spark.core.rdd.operator.transform
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark19_RDD_Operator_Transform {
+object Spark19_RDD_Operator_Transform_combineByKey {
 
     def main(args: Array[String]): Unit = {
 
@@ -18,14 +18,14 @@ object Spark19_RDD_Operator_Transform {
         ),2)
 
         // combineByKey : 方法需要三个参数
-        // 第一个参数表示：将相同key的第一个数据进行结构的转换，实现操作
-        // 第二个参数表示：分区内的计算规则
-        // 第三个参数表示：分区间的计算规则
         val newRDD : RDD[(String, (Int, Int))] = rdd.combineByKey(
+            // 第一个参数表示：将相同key的第一个数据进行结构的转换，实现操作
             v => (v, 1),
+            // 第二个参数表示：分区内的计算规则
             ( t:(Int, Int), v ) => {
                 (t._1 + v, t._2 + 1)
             },
+            // 第三个参数表示：分区间的计算规则
             (t1:(Int, Int), t2:(Int, Int)) => {
                 (t1._1 + t2._1, t1._2 + t2._2)
             }

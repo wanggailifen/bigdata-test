@@ -6,10 +6,10 @@ object Spark07_RDD_Operator_Action {
 
     def main(args: Array[String]): Unit = {
 
-        val sparkConf = new SparkConf().setMaster("local[*]").setAppName("Operator")
+        val sparkConf = new SparkConf().setMaster("local[*]").setAppName("Operator").set("spark.driver.bindAddress", "127.0.0.1")
         val sc = new SparkContext(sparkConf)
 
-        val rdd = sc.makeRDD(List[Int]())
+        val rdd = sc.makeRDD(List(1,2,3,4))
 
         val user = new User()
 
@@ -20,17 +20,17 @@ object Spark07_RDD_Operator_Action {
         // 闭包检测
         rdd.foreach(
             num => {
-                println("age = " + (user.age + num))
+                println(("age = " + (user.age + num)))
             }
         )
 
         sc.stop()
 
     }
-    //class User extends Serializable {
+//    class User extends Serializable {
     // 样例类在编译时，会自动混入序列化特质（实现可序列化接口）
-    //case class User() {
-    class User {
+    case class User() {
+//    class User {
         var age : Int = 30
     }
 }

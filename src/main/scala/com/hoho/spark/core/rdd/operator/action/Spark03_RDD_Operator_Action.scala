@@ -14,8 +14,8 @@ object Spark03_RDD_Operator_Action {
         // TODO - 行动算子
 
         //10 + 13 + 17 = 40
-        // aggregateByKey : 初始值只会参与分区内计算
-        // aggregate : 初始值会参与分区内计算,并且和参与分区间计算
+        // TODO aggregateByKey : 初始值只会参与分区内计算
+        // TODO aggregate : 初始值会参与分区内计算,并且参与分区间计算
         //val result = rdd.aggregate(10)(_+_, _+_)
         val result = rdd.fold(10)(_+_)
 

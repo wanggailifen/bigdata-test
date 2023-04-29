@@ -7,7 +7,7 @@ object Spark02_RDD_Dep {
 
     def main(args: Array[String]): Unit = {
 
-        val sparConf = new SparkConf().setMaster("local").setAppName("Dep")
+        val sparConf = new SparkConf().setMaster("local").setAppName("Dep").set("spark.driver.bindAddress", "127.0.0.1")
         val sc = new SparkContext(sparConf)
 
         val lines: RDD[String] = sc.textFile("datas/word.txt")

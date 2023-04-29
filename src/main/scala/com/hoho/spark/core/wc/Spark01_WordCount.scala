@@ -39,6 +39,9 @@ object Spark01_WordCount {
       }
     }
 
+    //打印血缘关系
+    println(wordToCount.toDebugString)
+
     // 5. 将转换结果采集到控制台打印出来
     val array: Array[(String, Int)] = wordToCount.collect()
     array.foreach(println)

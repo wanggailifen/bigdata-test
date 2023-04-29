@@ -2,7 +2,7 @@ package com.hoho.spark.core.rdd.operator.action
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark04_RDD_Operator_Action {
+object Spark04_RDD_Operator_Action_countByKey {
 
     def main(args: Array[String]): Unit = {
 
