@@ -18,8 +18,9 @@ object SocketWindowWordCountScala {
     //获取运行环境
     val env = StreamExecutionEnvironment.getExecutionEnvironment
 
-    //连接socket获取输入数据
+    //连接socket获取输入数据   nc -lp 9001
     val text = env.socketTextStream("localhost", 9001)
+
 
     //处理数据
     //添加 TypeInformation 参数
