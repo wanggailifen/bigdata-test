@@ -1,6 +1,7 @@
 package com.hoho.spark.streaming
 
 import org.apache.spark.SparkConf
+import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object SparkStreaming05_State {
@@ -16,7 +17,7 @@ object SparkStreaming05_State {
     // 使用有状态操作时，需要设定检查点路径
     val datas = ssc.socketTextStream("localhost", 9999)
 
-    val wordToOne = datas.map((_, 1))
+    val wordToOne: DStream[(String, Int)] = datas.map((_, 1))
 
     //val wordToCount = wordToOne.reduceByKey(_+_)
 

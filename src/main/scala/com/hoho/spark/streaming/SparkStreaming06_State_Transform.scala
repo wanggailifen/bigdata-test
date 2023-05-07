@@ -17,10 +17,10 @@ object SparkStreaming06_State_Transform {
         // 1. DStream功能不完善
         // 2. 需要代码周期性的执行
 
-        // Code : Driver端
+        // Code : Driver端（只会执行一次）
         val newDS: DStream[String] = lines.transform(
             rdd => {
-                // Code : Driver端，（周期性执行）
+                // Code : Driver端，（周期性执行,每个采集周期执行一次）
                 rdd.map(
                     str => {
                         // Code : Executor端
