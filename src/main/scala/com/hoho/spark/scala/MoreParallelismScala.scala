@@ -18,8 +18,8 @@ object MoreParallelismScala {
     val sc = new SparkContext(conf)
 
 
-    val dataRDD = sc.parallelize(Array[String]("hello","you","hello","me","hehe","hello","you","hello","me","hehe"))
-    dataRDD.map((_,1))
+    val dataRDD = sc.parallelize(Array[String]("hello", "you", "hello", "me", "hehe", "hello", "you", "hello", "me", "hehe"))
+    dataRDD.map((_, 1))
       .reduceByKey(_ + _)
       .foreach(println(_))
 
