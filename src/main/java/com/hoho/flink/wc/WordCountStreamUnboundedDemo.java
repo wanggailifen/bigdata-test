@@ -26,7 +26,7 @@ public class WordCountStreamUnboundedDemo {
         env.setParallelism(3);
 
         // TODO 2. 读取数据： socket   使用 nc -l 7777 发送数据
-        DataStreamSource<String> socketDS = env.socketTextStream("localhost", 7777);
+        DataStreamSource<String> socketDS = env.socketTextStream("hoho01", 7777);
 
         // TODO 3. 处理数据: 切换、转换、分组、聚合
         SingleOutputStreamOperator<Tuple2<String, Integer>> sum = socketDS

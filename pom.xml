@@ -12,7 +12,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <!--  compile：默认的scope，表示这个依赖将被编译、测试、运行等所有环境中使用。-->
-        <build.scope>compile</build.scope>
+<!--        <build.scope>compile</build.scope>-->
+        <build.scope>provided</build.scope>
         <flink.version>1.17.0</flink.version>
     </properties>
 
